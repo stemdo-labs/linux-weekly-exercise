@@ -1,9 +1,4 @@
-# initial-instructions
-
-Manten los apartados `Estructura del Repositorio` , `Contribución` y modifica el resto de apartados
-
-
-## Ejercicios de linux para iniciarse en el Mundo de DevOps
+# Ejercicios de linux para iniciarse en el Mundo de DevOps
 
 ¡Bienvenido/a al ejercicio final de linux para iniciarse en el mundo de DevOps!
 
