@@ -5,17 +5,17 @@ Manten los apartados `Estructura del Repositorio` , `Contribución` y modifica e
 
 ## Ejercicios de _tecnologia_ para iniciarse en el Mundo de DevOps
 
-¡Bienvenido/a a los ejercicios básicos de _tecnologia_ para iniciarse en el mundo de DevOps!
+¡Bienvenido/a al ejercicio final de _tecnologia_ para iniciarse en el mundo de DevOps!
 
-Este repositorio contiene una serie de ejercicios diseñados para ayudarte a familiarizarte con ...
+Este repositorio contiene un ejercicio diseñado para ayudarte a familiarizarte con la automatización de tareas administrativas relacionadas con linux.  
 
 ## Objetivos
 
-El propósito principal de estos ejercicios es proporcionarte una introducción práctica a los conceptos clave de _tecnologia_ que son esenciales para cualquier persona interesada en trabajar en el área de DevOps. Al completar estos ejercicios, esperamos que adquieras experiencia práctica con:
+El propósito principal de este ejercicio es el de afianzar los conocimientos adquiridos sobre _tecnologia_ y conocer más en profundidad el flujo natural de un script de bash. Al completar este ejercicio, esperamos que adquieras experiencia práctica con:
 
-- ...
-- ...
-- ...
+- Manejo del stdin y stdout.
+- Administración de usuarios en linux.
+- Concatenación y construcción de comandos más complejos.
 
 ## Estructura del Repositorio
 
