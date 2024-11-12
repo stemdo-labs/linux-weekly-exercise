@@ -103,7 +103,17 @@ case "$1" in
         ;;
 esac
 ```
+Para ejecutar el script en la terminal prondremos el siguiente comando:
 
+```bas
+./scriptUsuarios.sh <Nombre_funcion>
+```
+
+### Capturas de pantalla
+
+#### Parametro invalido
+
+[![Captura-de-pantalla-2024-11-12-145207.png](https://i.postimg.cc/wvggSwnb/Captura-de-pantalla-2024-11-12-145207.png)](https://postimg.cc/QB427J8p)
 
 
 
