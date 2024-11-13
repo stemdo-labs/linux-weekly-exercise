@@ -26,7 +26,7 @@ Para empezar crearemos un script `.sh` el cual contendra todo el siguiente códi
 ### scriptUsuarios.sh
 
 ```script
-!/bin/bash
+#!/bin/bash
 
 # Comprobacion de sudo
 
@@ -40,10 +40,14 @@ fi
 sinarchivos() {
         echo "Cuentas de usuarios sin archivos"
         for user in $(cut -d: -f1 /etc/passwd); do
-                if ! find / -user $user -xdev > /dev/null 2>&1; then
+                if [ -z "$(find / -user $user -xdev 2>/dev/null)" ]; then
                         echo -n "$user, "
+                        count=$((count + 1))
                 fi
         done
+        echo
+        echo
+        echo "Hay un total de $count usuarios sin ficheros"
         echo
 }
 
@@ -52,10 +56,14 @@ sinarchivos() {
 sinmodificar_6meses(){
         echo "Cuentas de usuarios sin modificar 6 meses"
         for user in $(cut -d: -f1 /etc/passwd); do
-                if find / -user $user -xdev -mtime +180 -print | grep -q .;then
+                if [ -z "$(find /-user $user -xdev -mtime +180 -print | grep -q .)" ];then
                         echo -n "$user, "
+                        count=$((count + 1))
                 fi
         done
+        echo
+        echo
+        echo "Hay un total de $count usuarios sin modificar durante 6 meses"
         echo
 }
 
@@ -64,10 +72,14 @@ sinmodificar_6meses(){
 sinmodificar_1anio(){
         echo "Cuentas de usuarios sin modificar 1 año"
         for user in $(cut -d: -f1 /etc/passwd); do
-                if find / -user $user -xdev -mtime +360 -print | grep -q .;then
+                if [ -z "$(find /-user $user -xdev -mtime +360 -print | grep -q .)" ];then
                         echo -n "$user, "
+                        count=$((count + 1))
                 fi
         done
+        echo
+        echo
+        echo "Hay un total de $count usuarios sin modificar durante 1 año"
         echo
 }
 
@@ -75,10 +87,14 @@ sinmodificar_1anio(){
 
 sinarchivos_sinmodificar1anio(){
         for user in $(cut -d: -f1 /etc/passwd);do
-                if ! find / -user $user -xdev > /dev/null 2>/dev/null || find / -user $user -xdev -mtime +360 -print | grep -q .;then
+                if [ -z  "$(find /-user $user -xdev > /dev/null 2>/dev/null || find / -user $user -xdev -mtime +360 -print | grep -q .)" ];then
                         echo -n "$user, "
+                        count=$((count + 1))
                 fi
         done
+        echo
+        echo
+        echo "Hay un total de $count usuarios sin archivos o sin modificar durante 1 año"
         echo
 }
 
@@ -102,6 +118,7 @@ case "$1" in
                 exit 1
         ;;
 esac
+
 ```
 Para ejecutar el script en la terminal prondremos el siguiente comando:
 
@@ -115,8 +132,9 @@ Para ejecutar el script en la terminal prondremos el siguiente comando:
 
 [![Captura-de-pantalla-2024-11-12-145207.png](https://i.postimg.cc/wvggSwnb/Captura-de-pantalla-2024-11-12-145207.png)](https://postimg.cc/QB427J8p)
 
+#### Usuarios sin archivos
 
-
+[![Captura-de-pantalla-2024-11-13-125104.png](https://i.postimg.cc/xdShCf5Q/Captura-de-pantalla-2024-11-13-125104.png)](https://postimg.cc/nX00StNS)
 
 
 
