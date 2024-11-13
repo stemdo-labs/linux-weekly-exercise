@@ -23,7 +23,7 @@ Realiza un script capaz de obtener la siguiente información sobre las cuentas:
 
 Para empezar crearemos un script `.sh` el cual contendra todo el siguiente código:
 
-### usuarioScript.sh
+### scriptUsuarios.sh
 
 ```script
 !/bin/bash
